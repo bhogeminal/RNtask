@@ -1,19 +1,19 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import {View, Text, ScrollView, StyleSheet} from 'react-native';
 
-const CommentList = ({ comments }) => {
+const CommentList = ({comments}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Post Details</Text>
       <ScrollView style={styles.scrollView}>
         {comments.map(comment => {
-            console.log("comments",comment)
-return(
-          <View key={comment.id} style={styles.commentBox}>
-            <Text style={styles.commentText}>{comment.body}</Text>
-          </View>
-)})}
-        
+          console.log('comments', comment);
+          return (
+            <View key={comment.id} style={styles.commentBox}>
+              <Text style={styles.commentText}>{comment.body}</Text>
+            </View>
+          );
+        })}
       </ScrollView>
     </View>
   );
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
-    flex:1
+    flex: 1,
   },
   commentText: {
     fontSize: 16,
